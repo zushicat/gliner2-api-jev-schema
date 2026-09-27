@@ -7,7 +7,7 @@ Local classification API
 ## Installation
 
 - Download model [fastino/GLiNER2.5-Decide](https://huggingface.co/fastino/GLiNER2.5-Decide) (Huggingface link)
-- Copy `.env.example` to `.env` and set `GLIDER_MODEL_PATH` to the downloaded model
+- Copy `.env.example` to `.env` and set `GLINER_MODEL_PATH` to the downloaded model
 - Create a virtual environment and install the app (editable install; no
   `PYTHONPATH` / env exports needed — `.env` is read automatically):
 
@@ -15,7 +15,7 @@ Local classification API
 python -m venv .venv
 source .venv/bin/activate
 pip install -e .
-cp .env.example .env   # then edit GLIDER_MODEL_PATH (+ optional API_KEY / USE_API_KEY)
+cp .env.example .env   # then edit GLINER_MODEL_PATH (+ optional API_KEY / USE_API_KEY)
 gliner-api             # serves HOST:PORT from .env → default 0.0.0.0:11101
 ```
 
@@ -143,7 +143,7 @@ response restores them verbatim.
   in [0, 1]. Swapping in a peakedness formula later would not change the
   contract.
 - **`model` echo**: the request's `model` field is accepted and ignored; the
-  response reports the configured `GLIDER_MODEL_NAME` (default
+  response reports the configured `GLINER_MODEL_NAME` (default
   `GLiNER2.5-Decide`).
 - **`usage`**: best-effort — `input_tokens` counted with the model's own
   tokenizer, `output_tokens` is always 0 (GLiNER2 generates no tokens).
