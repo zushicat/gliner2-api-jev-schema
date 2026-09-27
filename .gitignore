@@ -1,0 +1,7 @@
+__pycache__
+.DS_Store
+.vscode
+plans
+.env
+.venv
+*.egg-info

@@ -1,0 +1,57 @@
+# ********
+# ROOT | GET
+# ********
+# GET http://localhost:11101
+
+# ********
+# Jev (System One) | POST /v1/systemone
+# Typesafe-compatible: choice + score + noul in one request
+# ********
+POST http://localhost:11101/v1/systemone
+Content-Type: application/json
+
+{
+  "state": "My dog has allergies. I bought your pet food. Is it save if I feed my pet with your food right now? I am worried that this might make my dog sick.",
+  "model": "jev-latest",
+  "questions": {
+    "pet": {
+      "type": "choice",
+      "instructions": "Which type of pet does the customer have?",
+      "criteria": {
+        "cat": "The customer seems to have a cat.",
+        "dog": "The customer seems to have a dog.",
+        "other": "The customer seems to have neither a cat nor a dog."
+      }
+    },
+    "worried": {
+      "type": "score",
+      "instructions": "How worried is the customer?",
+      "criteria": [
+        "The customer seems to be quite worried.",
+        "The customer seems to be not worried at all."
+      ]
+    },
+    "is_urgent": {
+      "type": "noul",
+      "instructions": "Does this convey urgency?"
+    }
+  }
+}
+
+# ********
+# Jev (System One) | POST /v1/systemone with bearer auth
+# (only needed when USE_API_KEY=true in .env)
+# ********
+# POST http://localhost:11101/v1/systemone
+# Content-Type: application/json
+# Authorization: Bearer sk-1234
+#
+# {
+#   "state": "The refund never arrived.",
+#   "questions": {
+#     "is_urgent": {
+#       "type": "noul",
+#       "instructions": "Does this convey urgency?"
+#     }
+#   }
+# }

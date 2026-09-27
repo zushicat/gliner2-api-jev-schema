@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gliner-api"
+version = "0.1.0"
+description = "Local Jev-compatible classification API backed by GLiNER2.5-Decide"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi==0.141.1",
+    "gliner2==2.0.0",
+    "pydantic==2.13.5",
+    "pydantic-settings==2.15.0",
+    "requests==2.34.2",
+    "uvicorn==0.54.0",
+    "torch",
+    "transformers",
+    "peft",
+]
+
+[project.scripts]
+gliner-api = "gliner_api.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
