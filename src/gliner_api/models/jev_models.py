@@ -18,8 +18,9 @@ from pydantic import BaseModel, Field, field_validator, model_validator
 Instructions = str | dict | list
 Structured = str | dict | list | None
 
-
-# ---- questions -------------------------------------------------------------
+# *************
+# questions
+# *************
 
 
 class NoulCriteria(BaseModel):
@@ -78,7 +79,9 @@ class SystemOneRequest(BaseModel):
         return self
 
 
-# ---- answers ---------------------------------------------------------------
+# *************
+# answers
+# *************
 
 
 class NoulAnswer(BaseModel):
@@ -107,7 +110,9 @@ Answer = Annotated[
 ]
 
 
-# ---- response envelope -----------------------------------------------------
+# *************
+# response envelope
+# *************
 
 
 class Usage(BaseModel):

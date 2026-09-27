@@ -28,7 +28,7 @@ class ExtractorService:
 
     def load(self) -> None:
         model = AutoExtractor.from_pretrained(
-            self._config.GLIDER_MODEL_PATH,
+            self._config.GLINER_MODEL_PATH,
             local_files_only=True,
         )
         model.eval()

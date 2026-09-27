@@ -9,7 +9,9 @@ from pathlib import Path
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-_ENV_FILE = Path(__file__).resolve().parents[2] / ".env"  # project root, cwd-independent
+_ENV_FILE = (
+    Path(__file__).resolve().parents[2] / ".env"
+)  # project root, cwd-independent
 
 
 class Settings(BaseSettings):
@@ -21,8 +23,8 @@ class Settings(BaseSettings):
 
     API_KEY: str | None = None
     USE_API_KEY: bool = False
-    GLIDER_MODEL_PATH: str
-    GLIDER_MODEL_NAME: str = "GLiNER2.5-Decide"  # echoed in /v1/systemone responses
+    GLINER_MODEL_PATH: str
+    GLINER_MODEL_NAME: str = "GLiNER2.5-Decide"  # echoed in /v1/systemone responses
     HOST: str = "0.0.0.0"
     PORT: int = 11101
 

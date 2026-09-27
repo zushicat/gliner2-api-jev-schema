@@ -34,7 +34,7 @@ def system_one(
     result = service.classify(text, schema)
     answers = result_to_answers(payload.questions, result, restore)
     return SystemOneResponse(
-        model=payload.model or config.GLIDER_MODEL_NAME,
+        model=payload.model or config.GLINER_MODEL_NAME,
         answers=answers,
         usage=Usage(
             input_tokens=service.count_tokens(text),
