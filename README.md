@@ -1,8 +1,8 @@
-# Glider Api
+# Gliner2 Api with Jev compatible endpoints
 Local classification API
 - using [GLiNER2](https://github.com/fastino-ai/GLiNER2)
 - backed by [GLiNER2.5-Decide](https://huggingface.co/fastino/GLiNER2.5-Decide) model
-- serving a Typesafe Jev (System One) compatible endpoint at `POST /v1/systemone`
+- serving a Typesafe Ai's Jev (System One) compatible endpoint at `POST /v1/systemone`
 
 ## Installation
 
