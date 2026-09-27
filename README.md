@@ -25,7 +25,22 @@ Dev alternative (auto-reload):
 uvicorn gliner_api.app:app --reload --host 0.0.0.0 --port 11101
 ```
 
-The first startup takes a few seconds to load the model.
+In the terminal, you should see something that looks like this:
+```
+INFO:     Started server process [20748]
+INFO:     Waiting for application startup.
+============================================================
+🧠 Model Configuration
+============================================================
+Encoder model      : microsoft/deberta-v3-large
+Counting layer     : count_lstm
+Token pooling      : first
+============================================================
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:11101 (Press CTRL+C to quit)
+```
+
+**Note**: The first startup takes a few seconds to load the model. 
 
 ## Jev (System One) compatibility
 
